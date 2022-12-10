@@ -57,6 +57,6 @@ args = parser.parse_args()
 
 # verifica la vulnerabilità XSS dell'URL specificato
 if xss_tester(args.url, args.payload):
-    print(Fore.RED + "This URL is vulnerable to XSS with payload: " + Fore.RESET, args.payload)
+    print(Fore.RED + "Questo URL è vulnerabile agli XSS con il payload: " + Fore.RESET, args.payload)
 else:
-    print(Fore.GREEN + "This URL is not vulnerable to XSS with payload: " + Fore.RESET, args.payload)
+    print(Fore.GREEN + "Questo URL NON è vulnerabile agli XSS con il payload: " + Fore.RESET, args.payload)
