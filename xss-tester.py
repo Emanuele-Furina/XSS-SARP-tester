@@ -1,6 +1,7 @@
 import argparse
 import requests
 from bs4 import BeautifulSoup
+from colorama import Fore, Back, Style
 
 def xss_tester(url, payload):
     # Invia payload come richiesta GET
@@ -56,6 +57,6 @@ args = parser.parse_args()
 
 # verifica la vulnerabilità XSS dell'URL specificato
 if xss_tester(args.url, args.payload):
-    print("\033[31mQuesto URL è vulnerabile agli XSS con il payload: \033[0m", args.payload)
+    print(Fore.RED + "This URL is vulnerable to XSS with payload: " + Fore.RESET, args.payload)
 else:
-    print("\033[32mQuesto URL NON è vulnerabile agli XSS con il payload: \033[0m", args.payload)
+    print(Fore.GREEN + "This URL is not vulnerable to XSS with payload: " + Fore.RESET, args.payload)
